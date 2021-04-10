@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  line-height: normal;
+  overflow-x: hidden;
+  background-color: #f2f2f2;
+}
+
+.nav-content {
+  display: flex;
+  width: 100%;
+}
+.nav-content .tab-content {
+  display: flex;
+  margin: 0;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.nav-content .logo {
+  width: 100px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+
+.tab-content a {
+  list-style: none;
+  background-color: #110e26;
+  padding-top: 15px;
+  width: 100%;
+  height: 30px;
+  color: white;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+}
+
+.tab-content a:hover {
+  opacity: 0.9;
+  background-color: rgb(42, 42, 42);
+  color: white;
+}
+
+.hotNews-content {
+  display: flex;
+  justify-content: space-evenly;
+  height: 10em;
+  background-color: white;
+  /* usualmente uso position, pero para la entrega agregue transform*/
+  /* position: relative; */
+  animation: horizontal 10s linear forwards;
+  animation-play-state: paused;
+}
+
+.hotNews-content:hover {
+  animation-play-state: running;
+}
+
+.hotNews-content .hotNews-card {
+  display: flex;
+  margin-right: 10px;
+}
+
+.hotNews-content .hotNews-card .hotNews-resume {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotNews-content img {
+  width: 150px;
+  height: auto;
+}
+
+
+.news-content {
+  display: flex;
+  margin: 20px 0;
+}
+
+.news-content img {
+  width: 100px;
+  height: auto;
+}
+
+.news-card {
+  background-color: white;
+  padding: 10px;
+}
+
+.new-principal{
+  max-width: 55%;
+}
+
+.new-group {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.new-group > .news-card {
+  display: flex;
+  margin-left: 20px;
+}
+
+footer {
+  display: flex;
+}
+
+footer .footer-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 10%;
+  align-items: flex-end;
+}
+
+footer form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+footer .footer-subscription {
+  width: 60%;
+}
+
+footer .footer-subscription h2 {
+  text-align: center;
+}
+
+footer .footer-subscription .footer-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  display: flex;
+}
+
+h1 {
+  color: #110e26;
+}
+
+h2 {
+  color: #262626;
+}
+
+h3 {
+  color: #8b8c68;
+}
+
+tr {
+  background-color: white;
+}
+
+img {
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 20px;
+}
+
+@keyframes horizontal {
+  from {
+    /* left: 0; */
+    transform: translate(0);
+  }
+  to {
+    /* left: 100%; */
+    transform: translate(100%);
+  }
+}
+
+/* Sports */
+.sport-page {
+  grid-template-areas:
+    "bar bar"
+    "highlights podcast"
+    "hotNews podcast";
+  grid-template-columns: 65% 35%;
+}
+
+.live-bar {
+  grid-area: bar;
+  background-color: gainsboro;
+}
+
+.highlights-content {
+  grid-area: highlights;
+  background-color: gainsboro;
+}
+
+.podcast-content {
+  grid-area: podcast;
+  background-color: gainsboro;
+}
+
+.podcast-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sport-page > .hotNews-content {
+  grid-area: hotNews;
+  background-color: gainsboro;
+}
+
+/* Climate */
+.climate-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.today-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.today-resume {
+  display: flex;
+  justify-content: start;
+}
+
+.today-degrees {
+  font-size: 6rem;
+}
+
+.today-resume p {
+  width: 10%;
+  align-self: center;
+}
+
+.week-content {
+  display: flex;
+  justify-content: space-around;
+  background-color: gainsboro;
+}
+
+.data-content {
+  display: flex;
+  justify-content: center;
+}
+
+.data-text {
+  width: 50%;
+}
+
+.data-map {
+  width: 50%;
+}
