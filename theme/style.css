@@ -82,7 +82,7 @@ body {
 
 .news-content {
   display: flex;
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .news-content img {
@@ -107,7 +107,7 @@ body {
 
 .new-group > .news-card {
   display: flex;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 footer {
