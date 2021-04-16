@@ -53,10 +53,12 @@ body {
   display: flex;
   justify-content: space-evenly;
   height: 10em;
+  width: 200%;
+  overflow: hidden;
   background-color: white;
   /* usualmente uso position, pero para la entrega agregue transform*/
   /* position: relative; */
-  animation: horizontal 10s linear forwards;
+  animation: horizontal 25s linear infinite forwards;
   animation-play-state: paused;
 }
 
@@ -79,7 +81,6 @@ body {
   height: auto;
 }
 
-
 .news-content {
   display: flex;
   margin: 30px 0;
@@ -95,7 +96,7 @@ body {
   padding: 10px;
 }
 
-.new-principal{
+.new-principal {
   max-width: 55%;
 }
 
@@ -173,13 +174,17 @@ img {
 }
 
 @keyframes horizontal {
-  from {
+  0% {
     /* left: 0; */
-    transform: translate(0);
+    transform: translate(0, 0);
   }
-  to {
+  50% {
     /* left: 100%; */
-    transform: translate(100%);
+    transform: translate(-50%, 0);
+  }
+  100% {
+    /* left: 100%; */
+    transform: translate(0, 0);
   }
 }
 
