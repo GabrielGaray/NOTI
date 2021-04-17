@@ -59,11 +59,11 @@ body {
   /* usualmente uso position, pero para la entrega agregue transform*/
   /* position: relative; */
   animation: horizontal 25s linear infinite forwards;
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 .hotNews-content:hover {
-  animation-play-state: running;
+  animation-play-state: paused;
 }
 
 .hotNews-content .hotNews-card {
@@ -156,7 +156,7 @@ h2 {
 }
 
 h3 {
-  color: #8b8c68;
+  color: #6a6b50;
 }
 
 tr {
@@ -183,7 +183,7 @@ img {
     transform: translate(-50%, 0);
   }
   100% {
-    /* left: 100%; */
+    /* left: 0%; */
     transform: translate(0, 0);
   }
 }
@@ -230,6 +230,15 @@ img {
   flex-direction: column;
 }
 
+.climate-page >.search-content{
+  margin: 15px 15px 15px 0;
+}
+
+.search-content > input {
+  width: 25%;
+  height: 30px;
+}
+
 .today-content {
   display: flex;
   flex-direction: column;
@@ -240,13 +249,25 @@ img {
   justify-content: start;
 }
 
-.today-degrees {
+.today-resume  > .today-degrees {
+  margin-right: 25px;
   font-size: 6rem;
 }
 
+.today-detail{
+  display: flex;
+  justify-content: space-between;
+}
+
 .today-resume p {
-  width: 10%;
+  font-size: .7rem;
+  width: 20%;
   align-self: center;
+}
+
+.today-card > .today-degrees{
+  font-size: 4.5rem;
+  color: #a5a49c;
 }
 
 .week-content {
@@ -262,8 +283,10 @@ img {
 
 .data-text {
   width: 50%;
+  margin: 30px 0 15px 15px;
 }
 
 .data-map {
   width: 50%;
+  margin: 30px 15px 15px 0;
 }
