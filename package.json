@@ -1,0 +1,22 @@
+{
+  "name": "noti",
+  "version": "1.0.0",
+  "description": "curso coderHouse",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielGaray/NOTI.git"
+  },
+  "author": "Gabriel Garay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielGaray/NOTI/issues"
+  },
+  "homepage": "https://github.com/GabrielGaray/NOTI#readme"
+}
