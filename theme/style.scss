@@ -121,10 +121,9 @@ footer {
       a {
         color: white;
         text-decoration: none;
-        width: 100%;
+        @include flex(row, center);
       }
     }
-
   }
   .logo {
     width: 100px;
