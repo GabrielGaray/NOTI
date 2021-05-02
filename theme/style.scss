@@ -1,171 +1,79 @@
+/* General */
 * {
   margin: 0;
   padding: 0;
 }
+
+$dark-black: #262626;
+$blue-black: #110e26;
+$gray-yellow: #6a6b50;
+
 body {
-  font-size: 1rem;
+  font-size: 16px;
   font-family: "Roboto", sans-serif;
   line-height: normal;
   overflow-x: hidden;
   background-color: #f2f2f2;
+
+  h1 {
+    color: $blue-black;
+  }
+
+  h2 {
+    color: $blue-black;
+  }
+
+  h3 {
+    color: $gray-yellow;
+  }
+
+  p {
+    color: $dark-black;
+  }
+
+  tr {
+    background-color: white;
+  }
+
+  img {
+    margin-right: 10px;
+    object-fit: cover;
+  }
 }
 
-.nav-content {
+@mixin flex($direction, $justify: none, $align: none, $align-items: none) {
   display: flex;
-  width: 100%;
-}
-.nav-content .tab-content {
-  display: flex;
-  margin: 0;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.nav-content .logo {
-  width: 100px;
-  height: 30px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: 10px;
-}
-
-.tab-content a {
-  list-style: none;
-  background-color: #110e26;
-  padding-top: 15px;
-  width: 100%;
-  height: 30px;
-  color: white;
-  border-right: 1px solid white;
-  border-left: 1px solid white;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 600;
-}
-
-.tab-content a:hover {
-  opacity: 0.9;
-  background-color: rgb(42, 42, 42);
-  color: white;
-}
-
-.hotNews-content {
-  display: flex;
-  justify-content: space-evenly;
-  height: 10em;
-  width: 200%;
-  overflow: hidden;
-  background-color: white;
-  /* usualmente uso position, pero para la entrega agregue transform*/
-  /* position: relative; */
-  animation: horizontal 25s linear infinite forwards;
-  animation-play-state: running;
-}
-
-.hotNews-content:hover {
-  animation-play-state: paused;
-}
-
-.hotNews-content .hotNews-card {
-  display: flex;
-  margin-right: 10px;
-}
-
-.hotNews-content .hotNews-card .hotNews-resume {
-  display: flex;
-  flex-direction: column;
-}
-
-.hotNews-content img {
-  width: 150px;
-  height: auto;
-}
-
-.news-content {
-  display: flex;
-  margin: 30px 0;
-}
-
-.news-content img {
-  width: 100px;
-  height: auto;
-}
-
-.news-card {
-  background-color: white;
-  padding: 10px;
-}
-
-.new-principal {
-  max-width: 55%;
-}
-
-.new-group {
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-}
-
-.new-group > .news-card {
-  display: flex;
-  margin-left: 30px;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-content: $align;
+  align-items: $align-items;
 }
 
 footer {
   display: flex;
-}
 
-footer .footer-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 10%;
-  align-items: flex-end;
-}
+  .footer-info {
+    @include flex(column, flex-end, none, flex-end);
+    width: 10%;
+  }
 
-footer form {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-}
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
 
-footer .footer-subscription {
-  width: 60%;
-}
+  .footer-subscription {
+    width: 60%;
+  }
 
-footer .footer-subscription h2 {
-  text-align: center;
-}
+  .footer-subscription h2 {
+    text-align: center;
 
-footer .footer-subscription .footer-table {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox {
-  display: flex;
-}
-
-h1 {
-  color: #110e26;
-}
-
-h2 {
-  color: #262626;
-}
-
-h3 {
-  color: #6a6b50;
-}
-
-tr {
-  background-color: white;
-}
-
-img {
-  margin-right: 10px;
-  object-fit: cover;
+    .footer-table {
+      @include flex(row, center, none, center);
+    }
+  }
 }
 
 .grid {
@@ -175,17 +83,111 @@ img {
 
 @keyframes horizontal {
   0% {
-    /* left: 0; */
     transform: translate(0, 0);
   }
   50% {
-    /* left: 100%; */
     transform: translate(-50%, 0);
   }
   100% {
-    /* left: 0%; */
     transform: translate(0, 0);
   }
+}
+
+/* Home */
+.nav-content {
+  display: flex;
+  width: 100%;
+
+  .tab-content {
+    @include flex(row, space-evenly);
+    margin: 0;
+    width: 100%;
+    a {
+      list-style: none;
+      background-color: #110e26;
+      padding-top: 15px;
+      width: 100%;
+      height: 30px;
+      color: white;
+      border-right: 1px solid white;
+      border-left: 1px solid white;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 600;
+      &:hover {
+        opacity: 0.9;
+        background-color: rgb(42, 42, 42);
+        color: white;
+      }
+    }
+
+    .logo {
+      width: 100px;
+      height: 30px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-top: 10px;
+    }
+  }
+}
+
+.hotNews-content {
+  @include flex(row, space-evenly);
+  height: 160px;
+  width: 200%;
+  overflow: hidden;
+  background-color: white;
+  animation: horizontal 25s linear infinite forwards;
+  animation-play-state: running;
+  &:hover {
+    animation-play-state: paused;
+  }
+
+  .hotNews-card {
+    display: flex;
+    margin-right: 10px;
+
+    .hotNews-resume {
+      @include flex(column);
+    }
+  }
+
+  img {
+    width: 150px;
+    height: auto;
+  }
+}
+
+.news-content {
+  display: flex;
+  margin: 30px 0;
+
+  img {
+    width: 100px;
+    height: auto;
+  }
+
+  .news-card {
+    background-color: white;
+    padding: 10px;
+  }
+
+  .new-principal {
+    max-width: 55%;
+  }
+
+  .new-group {
+    @include flex(column, none, space-between);
+
+    .news-card {
+      display: flex;
+      margin-left: 30px;
+    }
+  }
+}
+
+.checkbox {
+  display: flex;
 }
 
 /* Sports */
@@ -195,98 +197,82 @@ img {
     "highlights podcast"
     "hotNews podcast";
   grid-template-columns: 65% 35%;
-}
+  .live-bar {
+    grid-area: bar;
+    background-color: gainsboro;
+  }
 
-.live-bar {
-  grid-area: bar;
-  background-color: gainsboro;
-}
+  .highlights-content {
+    grid-area: highlights;
+    background-color: gainsboro;
+  }
 
-.highlights-content {
-  grid-area: highlights;
-  background-color: gainsboro;
-}
-
-.podcast-content {
-  grid-area: podcast;
-  background-color: gainsboro;
-}
-
-.podcast-video {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.sport-page > .hotNews-content {
-  grid-area: hotNews;
-  background-color: gainsboro;
+  .podcast-content {
+    grid-area: podcast;
+    background-color: gainsboro;
+    .podcast-video {
+      @include flex(column, center, space-between, center);
+    }
+  }
+  .hotNews-content {
+    grid-area: hotNews;
+    background-color: gainsboro;
+    z-index: -1;
+  }
 }
 
 /* Climate */
 .climate-page {
-  display: flex;
-  flex-direction: column;
-}
+  @include flex(column);
+  .search-content {
+    margin: 15px 15px 15px 0;
+    input {
+      width: 25%;
+      height: 30px;
+    }
+  }
 
-.climate-page >.search-content{
-  margin: 15px 15px 15px 0;
-}
+  .today-content {
+    @include flex(column);
+  }
 
-.search-content > input {
-  width: 25%;
-  height: 30px;
-}
+  .today-resume {
+    @include flex(row, start);
+    .today-degrees {
+      margin-right: 25px;
+      font-size: 6rem;
+    }
+    p {
+      align-self: center;
+      font-size: 0.7rem;
+      width: 20%;
+    }
+    .today-detail {
+      @include flex(row, space-between);
+      .today-card {
+        .today-degrees {
+          font-size: 4.5rem;
+          color: #a5a49c;
+        }
+      }
+    }
+  }
 
-.today-content {
-  display: flex;
-  flex-direction: column;
-}
+  .week-content {
+    @include flex(row, space-around);
+    background-color: gainsboro;
+  }
 
-.today-resume {
-  display: flex;
-  justify-content: start;
-}
+  .data-content {
+    @include flex(row, center);
+    .data-text {
+      width: 50%;
+      margin: 30px 0 15px 15px;
+    }
 
-.today-resume  > .today-degrees {
-  margin-right: 25px;
-  font-size: 6rem;
-}
-
-.today-detail{
-  display: flex;
-  justify-content: space-between;
-}
-
-.today-resume p {
-  font-size: .7rem;
-  width: 20%;
-  align-self: center;
-}
-
-.today-card > .today-degrees{
-  font-size: 4.5rem;
-  color: #a5a49c;
-}
-
-.week-content {
-  display: flex;
-  justify-content: space-around;
-  background-color: gainsboro;
-}
-
-.data-content {
-  display: flex;
-  justify-content: center;
-}
-
-.data-text {
-  width: 50%;
-  margin: 30px 0 15px 15px;
-}
-
-.data-map {
-  width: 50%;
-  margin: 30px 15px 15px 0;
+    .data-map {
+      width: 50%;
+      margin: 30px 15px 15px 0;
+    }
+  }
 }

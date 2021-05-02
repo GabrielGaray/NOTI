@@ -1,16 +1,142 @@
+/* General */
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-size: 1rem;
+  font-size: 16px;
   font-family: "Roboto", sans-serif;
   line-height: normal;
   overflow-x: hidden;
   background-color: #f2f2f2;
 }
 
+body h1 {
+  color: #110e26;
+}
+
+body h2 {
+  color: #110e26;
+}
+
+body h3 {
+  color: #6a6b50;
+}
+
+body p {
+  color: #262626;
+}
+
+body tr {
+  background-color: white;
+}
+
+body img {
+  margin-right: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .footer-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 10%;
+}
+
+footer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+}
+
+footer .footer-subscription {
+  width: 60%;
+}
+
+footer .footer-subscription h2 {
+  text-align: center;
+}
+
+footer .footer-subscription h2 .footer-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+}
+
+@-webkit-keyframes horizontal {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes horizontal {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+/* Home */
 .nav-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -22,22 +148,23 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  margin: 0;
   width: 100%;
 }
 
-.nav-content .logo {
-  width: 100px;
-  height: 30px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: 10px;
-}
-
-.tab-content a {
+.nav-content .tab-content a {
   list-style: none;
   background-color: #110e26;
   padding-top: 15px;
@@ -51,25 +178,40 @@ body {
   font-weight: 600;
 }
 
-.tab-content a:hover {
+.nav-content .tab-content a:hover {
   opacity: 0.9;
   background-color: #2a2a2a;
   color: white;
+}
+
+.nav-content .tab-content .logo {
+  width: 100px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 10px;
 }
 
 .hotNews-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 10em;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  height: 160px;
   width: 200%;
   overflow: hidden;
   background-color: white;
-  /* usualmente uso position, pero para la entrega agregue transform*/
-  /* position: relative; */
   -webkit-animation: horizontal 25s linear infinite forwards;
           animation: horizontal 25s linear infinite forwards;
   -webkit-animation-play-state: running;
@@ -96,6 +238,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
 }
 
 .hotNews-content img {
@@ -115,16 +265,16 @@ body {
   height: auto;
 }
 
-.news-card {
+.news-content .news-card {
   background-color: white;
   padding: 10px;
 }
 
-.new-principal {
+.news-content .new-principal {
   max-width: 55%;
 }
 
-.new-group {
+.news-content .new-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,139 +282,27 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
   -ms-flex-line-pack: justify;
       align-content: space-between;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
 }
 
-.new-group > .news-card {
+.news-content .new-group .news-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-left: 30px;
 }
 
-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-footer .footer-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  width: 10%;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-footer form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 30%;
-}
-
-footer .footer-subscription {
-  width: 60%;
-}
-
-footer .footer-subscription h2 {
-  text-align: center;
-}
-
-footer .footer-subscription .footer-table {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-h1 {
-  color: #110e26;
-}
-
-h2 {
-  color: #262626;
-}
-
-h3 {
-  color: #6a6b50;
-}
-
-tr {
-  background-color: white;
-}
-
-img {
-  margin-right: 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.grid {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 20px;
-}
-
-@-webkit-keyframes horizontal {
-  0% {
-    /* left: 0; */
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-  50% {
-    /* left: 100%; */
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-  }
-  100% {
-    /* left: 0%; */
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-}
-
-@keyframes horizontal {
-  0% {
-    /* left: 0; */
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-  50% {
-    /* left: 100%; */
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-  }
-  100% {
-    /* left: 0%; */
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
 }
 
 /* Sports */
@@ -274,7 +312,7 @@ img {
       grid-template-columns: 65% 35%;
 }
 
-.live-bar {
+.sport-page .live-bar {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -282,14 +320,14 @@ img {
   background-color: gainsboro;
 }
 
-.highlights-content {
+.sport-page .highlights-content {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: highlights;
   background-color: gainsboro;
 }
 
-.podcast-content {
+.sport-page .podcast-content {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
@@ -297,7 +335,7 @@ img {
   background-color: gainsboro;
 }
 
-.podcast-video {
+.sport-page .podcast-content .podcast-video {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -308,16 +346,19 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.sport-page > .hotNews-content {
+.sport-page .hotNews-content {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: hotNews;
   background-color: gainsboro;
+  z-index: -1;
 }
 
 /* Climate */
@@ -329,18 +370,26 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
 }
 
-.climate-page > .search-content {
+.climate-page .search-content {
   margin: 15px 15px 15px 0;
 }
 
-.search-content > input {
+.climate-page .search-content input {
   width: 25%;
   height: 30px;
 }
 
-.today-content {
+.climate-page .today-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -348,68 +397,112 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
 }
 
-.today-resume {
+.climate-page .today-resume {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
 }
 
-.today-resume > .today-degrees {
+.climate-page .today-resume .today-degrees {
   margin-right: 25px;
   font-size: 6rem;
 }
 
-.today-detail {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.today-resume p {
-  font-size: .7rem;
-  width: 20%;
+.climate-page .today-resume p {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  font-size: 0.7rem;
+  width: 20%;
 }
 
-.today-card > .today-degrees {
+.climate-page .today-resume .today-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+}
+
+.climate-page .today-resume .today-detail .today-card .today-degrees {
   font-size: 4.5rem;
   color: #a5a49c;
 }
 
-.week-content {
+.climate-page .week-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
   background-color: gainsboro;
 }
 
-.data-content {
+.climate-page .data-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
 }
 
-.data-text {
+.climate-page .data-content .data-text {
   width: 50%;
   margin: 30px 0 15px 15px;
 }
 
-.data-map {
+.climate-page .data-content .data-map {
   width: 50%;
   margin: 30px 15px 15px 0;
 }
