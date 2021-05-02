@@ -535,4 +535,8 @@ footer .footer-subscription h2 .footer-table {
 .abm-news-content textarea {
   height: 300px;
 }
+
+.abm-news-content .form-check {
+  margin: 15px 0 0 30px;
+}
 /*# sourceMappingURL=style.css.map */
