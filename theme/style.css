@@ -235,6 +235,8 @@ footer .footer-subscription h2 .footer-table {
           animation: horizontal 25s linear infinite forwards;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  -webkit-box-shadow: 10px 5px 5px #d8d8d8;
+          box-shadow: 10px 5px 5px #d8d8d8;
 }
 
 .hotNews-content:hover {
@@ -286,6 +288,8 @@ footer .footer-subscription h2 .footer-table {
 
 .news-content .news-card {
   background-color: white;
+  -webkit-box-shadow: 10px 5px 5px #d8d8d8;
+          box-shadow: 10px 5px 5px #d8d8d8;
   padding: 10px;
 }
 
@@ -340,14 +344,18 @@ footer .footer-subscription h2 .footer-table {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: bar;
-  background-color: gainsboro;
+  background-color: white;
+  -webkit-box-shadow: 10px 5px 5px #d8d8d8;
+          box-shadow: 10px 5px 5px #d8d8d8;
 }
 
 .sport-page .highlights-content {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: highlights;
-  background-color: gainsboro;
+  background-color: white;
+  -webkit-box-shadow: 10px 5px 5px #d8d8d8;
+          box-shadow: 10px 5px 5px #d8d8d8;
 }
 
 .sport-page .podcast-content {
@@ -355,7 +363,9 @@ footer .footer-subscription h2 .footer-table {
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
   grid-area: podcast;
-  background-color: gainsboro;
+  background-color: white;
+  -webkit-box-shadow: 10px 5px 5px #d8d8d8;
+          box-shadow: 10px 5px 5px #d8d8d8;
 }
 
 .sport-page .podcast-content .podcast-video {
@@ -380,7 +390,6 @@ footer .footer-subscription h2 .footer-table {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: hotNews;
-  background-color: gainsboro;
   z-index: -1;
 }
 

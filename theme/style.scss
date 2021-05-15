@@ -7,6 +7,7 @@
 $dark-black: #262626;
 $blue-black: #110e26;
 $gray-yellow: #6a6b50;
+$soft-gray: #d8d8d8;
 
 body {
   font-size: 16px;
@@ -142,6 +143,7 @@ footer {
   background-color: white;
   animation: horizontal 25s linear infinite forwards;
   animation-play-state: running;
+  box-shadow: 10px 5px 5px $soft-gray;
   &:hover {
     animation-play-state: paused;
   }
@@ -172,6 +174,7 @@ footer {
 
   .news-card {
     background-color: white;
+    box-shadow: 10px 5px 5px $soft-gray;
     padding: 10px;
     &.top-notice{
       margin-bottom: 30px
@@ -205,24 +208,26 @@ footer {
   grid-template-columns: 65% 35%;
   .live-bar {
     grid-area: bar;
-    background-color: gainsboro;
+    background-color: white;
+    box-shadow: 10px 5px 5px $soft-gray;
   }
 
   .highlights-content {
     grid-area: highlights;
-    background-color: gainsboro;
+    background-color: white;
+    box-shadow: 10px 5px 5px $soft-gray;
   }
 
   .podcast-content {
     grid-area: podcast;
-    background-color: gainsboro;
+    background-color: white;
+    box-shadow: 10px 5px 5px $soft-gray;
     .podcast-video {
       @include flex(column, center, space-between, center);
     }
   }
   .hotNews-content {
     grid-area: hotNews;
-    background-color: gainsboro;
     z-index: -1;
   }
 }
