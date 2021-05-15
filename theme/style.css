@@ -290,6 +290,10 @@ footer .footer-subscription h2 .footer-table {
   padding: 10px;
 }
 
+.news-content .news-card.top-notice {
+  margin-bottom: 30px;
+}
+
 .news-content .new-principal {
   max-width: 55%;
 }
@@ -525,6 +529,11 @@ footer .footer-subscription h2 .footer-table {
 .climate-page .data-content .data-map {
   width: 50%;
   margin: 30px 15px 15px 0;
+}
+
+.climate-page .data-content .data-map .iframe-map {
+  width: 100%;
+  height: 720px;
 }
 
 /* abm-news*/
