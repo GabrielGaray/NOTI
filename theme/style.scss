@@ -19,6 +19,7 @@ body {
   line-height: normal;
   background-color: #f2f2f2;
   overflow-x: hidden;
+  padding: 10px;
 
   h1 {
     color: $blue-black;
@@ -26,10 +27,14 @@ body {
 
   h2 {
     color: $blue-black;
+    @media (max-width: 800px) {
+      font-size: 18px;
+    }
   }
 
   h3 {
     color: $gray-yellow;
+    margin-bottom: 3px;
   }
 
   p {
@@ -98,6 +103,16 @@ footer {
   }
 }
 
+span {
+  color: red;
+  align-self: flex-end;
+  justify-self: flex-end;
+  position: fixed;
+  bottom: 0;
+  margin: 0 30px 10px 0;
+  cursor: pointer;
+}
+
 /* Home */
 .nav-content {
   display: flex;
@@ -110,12 +125,10 @@ footer {
     li {
       list-style: none;
       background-color: #110e26;
-      padding-top: 15px;
       width: 100%;
-      height: 30px;
+      height: 100%;
       border-right: 1px solid white;
       border-left: 1px solid white;
-      text-align: center;
       font-weight: 600;
       cursor: pointer;
       &:hover {
@@ -126,7 +139,11 @@ footer {
       a {
         color: white;
         text-decoration: none;
+        height: inherit;
         @include flex(row, center);
+        div{
+          align-self: center;
+        }
       }
     }
   }
@@ -151,7 +168,7 @@ footer {
   animation: horizontal 25s linear infinite forwards;
   animation-play-state: running;
   box-shadow: 10px 5px 5px $soft-gray;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     position: sticky;
     top: 0;
   }
@@ -165,7 +182,7 @@ footer {
 
     .hotNews-resume {
       @include flex(column);
-      @media (max-width: 600px) {
+      @media (max-width: 800px) {
         width: 250px;
       }
     }
@@ -179,7 +196,7 @@ footer {
 
 .news-content {
   display: flex;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     flex-wrap: wrap;
   }
   margin: 30px 0;
@@ -193,25 +210,35 @@ footer {
     box-shadow: 10px 5px 5px $soft-gray;
     padding: 10px;
     &.top-notice {
-      @media (max-width: 600px) {
+      @media (max-width: 800px) {
         margin: 30px 0;
       }
       margin-bottom: 30px;
     }
+    span {
+      position: unset;
+    }
   }
 
   .new-principal {
-    @media (min-width: 600px) {
+    img {
+      object-fit: cover;
+      min-width: 100%;
+      height: auto;
+    }
+    @media (min-width: 800px) {
       max-width: 55%;
     }
   }
 
   .new-group {
     @include flex(column, none, space-between);
-
+    @media (min-width: 800px) {
+      width: 50%;
+    }
     .news-card {
       display: flex;
-      @media (min-width: 600px) {
+      @media (min-width: 800px) {
         margin-left: 30px;
       }
     }
@@ -228,8 +255,21 @@ footer {
     "bar bar"
     "highlights podcast"
     "hotNews podcast";
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 55% 45%;
+  grid-template-rows: 10% 3fr 3fr;
+  height: 100vh;
+  @media (max-width: 900px) {
+    grid-template-areas:
+      "bar"
+      "highlights"
+      "podcast"
+      "hotNews";
+    grid-template-columns: 100%;
+    grid-template-rows: 5% 1fr 2fr 1fr;
+    height: auto;
+  }
   .live-bar {
+    @include flex(row, center, center);
     grid-area: bar;
     background-color: white;
     box-shadow: 10px 5px 5px $soft-gray;
@@ -239,19 +279,36 @@ footer {
     grid-area: highlights;
     background-color: white;
     box-shadow: 10px 5px 5px $soft-gray;
+    padding: 10px 20px;
   }
 
   .podcast-content {
     grid-area: podcast;
     background-color: white;
     box-shadow: 10px 5px 5px $soft-gray;
-    .podcast-video {
-      @include flex(column, center, space-between, center);
+    @include flex(column, none, space-between);
+    .podcast-card {
+      padding: 10px 20px 10px 20px;
     }
   }
-  .hotNews-content {
+  .hotNews-group {
+    @include flex(column, space-between);
     grid-area: hotNews;
     z-index: -1;
+  }
+  .hotNews-content {
+    padding: 5px 0;
+    @media (min-width: 1900px) {
+      height: 180px;
+    }
+  }
+  iframe {
+    min-width: 100%;
+    min-height: 200px;
+    height: auto;
+    @media (min-width: 1900px) {
+      min-height: 350px;
+    }
   }
 }
 

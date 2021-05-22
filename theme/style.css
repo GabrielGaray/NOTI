@@ -15,6 +15,7 @@ body {
   line-height: normal;
   background-color: #f2f2f2;
   overflow-x: hidden;
+  padding: 10px;
 }
 
 body h1 {
@@ -25,8 +26,15 @@ body h2 {
   color: #110e26;
 }
 
+@media (max-width: 800px) {
+  body h2 {
+    font-size: 18px;
+  }
+}
+
 body h3 {
   color: #6a6b50;
+  margin-bottom: 3px;
 }
 
 body p {
@@ -141,6 +149,17 @@ footer .footer-subscription h2 .footer-table {
   }
 }
 
+span {
+  color: red;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  justify-self: flex-end;
+  position: fixed;
+  bottom: 0;
+  margin: 0 30px 10px 0;
+  cursor: pointer;
+}
+
 /* Home */
 .nav-content {
   display: -webkit-box;
@@ -172,12 +191,10 @@ footer .footer-subscription h2 .footer-table {
 .nav-content .tab-content li {
   list-style: none;
   background-color: #110e26;
-  padding-top: 15px;
   width: 100%;
-  height: 30px;
+  height: 100%;
   border-right: 1px solid white;
   border-left: 1px solid white;
-  text-align: center;
   font-weight: 600;
   cursor: pointer;
 }
@@ -191,6 +208,7 @@ footer .footer-subscription h2 .footer-table {
 .nav-content .tab-content li a {
   color: white;
   text-decoration: none;
+  height: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,6 +224,12 @@ footer .footer-subscription h2 .footer-table {
   -webkit-box-align: none;
       -ms-flex-align: none;
           align-items: none;
+}
+
+.nav-content .tab-content li a div {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .nav-content .logo {
@@ -250,7 +274,7 @@ footer .footer-subscription h2 .footer-table {
           box-shadow: 10px 5px 5px #d8d8d8;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .hotNews-content {
     position: -webkit-sticky;
     position: sticky;
@@ -288,7 +312,7 @@ footer .footer-subscription h2 .footer-table {
           align-items: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .hotNews-content .hotNews-card .hotNews-resume {
     width: 250px;
   }
@@ -306,7 +330,7 @@ footer .footer-subscription h2 .footer-table {
   margin: 30px 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .news-content {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -329,13 +353,24 @@ footer .footer-subscription h2 .footer-table {
   margin-bottom: 30px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .news-content .news-card.top-notice {
     margin: 30px 0;
   }
 }
 
-@media (min-width: 600px) {
+.news-content .news-card span {
+  position: unset;
+}
+
+.news-content .new-principal img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 800px) {
   .news-content .new-principal {
     max-width: 55%;
   }
@@ -359,13 +394,19 @@ footer .footer-subscription h2 .footer-table {
           align-items: none;
 }
 
+@media (min-width: 800px) {
+  .news-content .new-group {
+    width: 50%;
+  }
+}
+
 .news-content .new-group .news-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .news-content .new-group .news-card {
     margin-left: 30px;
   }
@@ -380,11 +421,40 @@ footer .footer-subscription h2 .footer-table {
 /* Sports */
 .sport-page {
       grid-template-areas: "bar bar" "highlights podcast" "hotNews podcast";
-  -ms-grid-columns: 65% 35%;
-      grid-template-columns: 65% 35%;
+  -ms-grid-columns: 55% 45%;
+      grid-template-columns: 55% 45%;
+  -ms-grid-rows: 10% 3fr 3fr;
+      grid-template-rows: 10% 3fr 3fr;
+  height: 100vh;
+}
+
+@media (max-width: 900px) {
+  .sport-page {
+        grid-template-areas: "bar" "highlights" "podcast" "hotNews";
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 5% 1fr 2fr 1fr;
+        grid-template-rows: 5% 1fr 2fr 1fr;
+    height: auto;
+  }
 }
 
 .sport-page .live-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -401,6 +471,7 @@ footer .footer-subscription h2 .footer-table {
   background-color: white;
   -webkit-box-shadow: 10px 5px 5px #d8d8d8;
           box-shadow: 10px 5px 5px #d8d8d8;
+  padding: 10px 20px;
 }
 
 .sport-page .podcast-content {
@@ -411,9 +482,6 @@ footer .footer-subscription h2 .footer-table {
   background-color: white;
   -webkit-box-shadow: 10px 5px 5px #d8d8d8;
           box-shadow: 10px 5px 5px #d8d8d8;
-}
-
-.sport-page .podcast-content .podcast-video {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -421,21 +489,62 @@ footer .footer-subscription h2 .footer-table {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
   -ms-flex-line-pack: justify;
       align-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
 }
 
-.sport-page .hotNews-content {
+.sport-page .podcast-content .podcast-card {
+  padding: 10px 20px 10px 20px;
+}
+
+.sport-page .hotNews-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: hotNews;
   z-index: -1;
+}
+
+.sport-page .hotNews-content {
+  padding: 5px 0;
+}
+
+@media (min-width: 1900px) {
+  .sport-page .hotNews-content {
+    height: 180px;
+  }
+}
+
+.sport-page iframe {
+  min-width: 100%;
+  min-height: 200px;
+  height: auto;
+}
+
+@media (min-width: 1900px) {
+  .sport-page iframe {
+    min-height: 350px;
+  }
 }
 
 /* Climate */
