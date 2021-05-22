@@ -7,6 +7,7 @@
 html {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
@@ -14,8 +15,8 @@ body {
   font-family: "Roboto", sans-serif;
   line-height: normal;
   background-color: #f2f2f2;
-  overflow-x: hidden;
   padding: 10px;
+  overflow-x: hidden;
 }
 
 body h1 {
@@ -49,6 +50,12 @@ body img {
   margin-right: 10px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  body .hidden-mobile {
+    visibility: hidden;
+  }
 }
 
 footer {
@@ -684,9 +691,22 @@ span {
           align-items: none;
 }
 
+@media (max-width: 800px) {
+  .climate-page .data-content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .climate-page .data-content .data-text {
   width: 50%;
   margin: 30px 0 15px 15px;
+}
+
+@media (max-width: 800px) {
+  .climate-page .data-content .data-text {
+    width: 100%;
+  }
 }
 
 .climate-page .data-content .data-map {
@@ -697,6 +717,12 @@ span {
 .climate-page .data-content .data-map .iframe-map {
   width: 100%;
   height: 720px;
+}
+
+@media (max-width: 800px) {
+  .climate-page .data-content .data-map {
+    width: 100%;
+  }
 }
 
 /* abm-news*/
