@@ -4,12 +4,17 @@
   padding: 0;
 }
 
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Roboto", sans-serif;
   line-height: normal;
-  overflow-x: hidden;
   background-color: #f2f2f2;
+  overflow-x: hidden;
 }
 
 body h1 {
@@ -204,11 +209,16 @@ footer .footer-subscription h2 .footer-table {
 }
 
 .nav-content .logo {
-  width: 100px;
   height: 30px;
   background-size: contain;
   background-repeat: no-repeat;
   margin-top: 10px;
+}
+
+@media (min-width: 375px) {
+  .nav-content .logo {
+    width: 100px;
+  }
 }
 
 .hotNews-content {
@@ -227,9 +237,10 @@ footer .footer-subscription h2 .footer-table {
   -webkit-box-align: none;
       -ms-flex-align: none;
           align-items: none;
+  overflow-x: scroll;
   height: 160px;
   width: 200%;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: white;
   -webkit-animation: horizontal 25s linear infinite forwards;
           animation: horizontal 25s linear infinite forwards;
@@ -237,6 +248,14 @@ footer .footer-subscription h2 .footer-table {
           animation-play-state: running;
   -webkit-box-shadow: 10px 5px 5px #d8d8d8;
           box-shadow: 10px 5px 5px #d8d8d8;
+}
+
+@media (max-width: 600px) {
+  .hotNews-content {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
 }
 
 .hotNews-content:hover {
@@ -269,6 +288,12 @@ footer .footer-subscription h2 .footer-table {
           align-items: none;
 }
 
+@media (max-width: 600px) {
+  .hotNews-content .hotNews-card .hotNews-resume {
+    width: 250px;
+  }
+}
+
 .hotNews-content img {
   width: 150px;
   height: auto;
@@ -279,6 +304,13 @@ footer .footer-subscription h2 .footer-table {
   display: -ms-flexbox;
   display: flex;
   margin: 30px 0;
+}
+
+@media (max-width: 600px) {
+  .news-content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .news-content img {
@@ -297,8 +329,16 @@ footer .footer-subscription h2 .footer-table {
   margin-bottom: 30px;
 }
 
-.news-content .new-principal {
-  max-width: 55%;
+@media (max-width: 600px) {
+  .news-content .news-card.top-notice {
+    margin: 30px 0;
+  }
+}
+
+@media (min-width: 600px) {
+  .news-content .new-principal {
+    max-width: 55%;
+  }
 }
 
 .news-content .new-group {
@@ -323,7 +363,12 @@ footer .footer-subscription h2 .footer-table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 30px;
+}
+
+@media (min-width: 600px) {
+  .news-content .new-group .news-card {
+    margin-left: 30px;
+  }
 }
 
 .checkbox {

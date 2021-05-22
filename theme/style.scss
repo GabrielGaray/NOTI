@@ -9,12 +9,16 @@ $blue-black: #110e26;
 $gray-yellow: #6a6b50;
 $soft-gray: #d8d8d8;
 
+html {
+  width: 100vw;
+  height: 100vh;
+}
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Roboto", sans-serif;
   line-height: normal;
-  overflow-x: hidden;
   background-color: #f2f2f2;
+  overflow-x: hidden;
 
   h1 {
     color: $blue-black;
@@ -127,7 +131,9 @@ footer {
     }
   }
   .logo {
-    width: 100px;
+    @media (min-width: 375px) {
+      width: 100px;
+    }
     height: 30px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -137,13 +143,18 @@ footer {
 
 .hotNews-content {
   @include flex(row, space-evenly);
+  overflow-x: scroll;
   height: 160px;
   width: 200%;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: white;
   animation: horizontal 25s linear infinite forwards;
   animation-play-state: running;
   box-shadow: 10px 5px 5px $soft-gray;
+  @media (max-width: 600px) {
+    position: sticky;
+    top: 0;
+  }
   &:hover {
     animation-play-state: paused;
   }
@@ -154,6 +165,9 @@ footer {
 
     .hotNews-resume {
       @include flex(column);
+      @media (max-width: 600px) {
+        width: 250px;
+      }
     }
   }
 
@@ -165,8 +179,10 @@ footer {
 
 .news-content {
   display: flex;
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
   margin: 30px 0;
-
   img {
     width: 100px;
     height: auto;
@@ -176,13 +192,18 @@ footer {
     background-color: white;
     box-shadow: 10px 5px 5px $soft-gray;
     padding: 10px;
-    &.top-notice{
-      margin-bottom: 30px
+    &.top-notice {
+      @media (max-width: 600px) {
+        margin: 30px 0;
+      }
+      margin-bottom: 30px;
     }
   }
 
   .new-principal {
-    max-width: 55%;
+    @media (min-width: 600px) {
+      max-width: 55%;
+    }
   }
 
   .new-group {
@@ -190,7 +211,9 @@ footer {
 
     .news-card {
       display: flex;
-      margin-left: 30px;
+      @media (min-width: 600px) {
+        margin-left: 30px;
+      }
     }
   }
 }
