@@ -624,12 +624,20 @@ span {
   font-size: 6rem;
 }
 
+@media (max-width: 800px) {
+  .climate-page .today-resume .today-degrees {
+    font-size: 5rem;
+  }
+}
+
 .climate-page .today-resume p {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   font-size: 0.7rem;
-  width: 20%;
+  min-width: 100px;
+  max-width: 20%;
+  color: #a5a49c;
 }
 
 .climate-page .today-resume .today-detail {
@@ -655,6 +663,12 @@ span {
   color: #a5a49c;
 }
 
+@media (max-width: 800px) {
+  .climate-page .today-resume .today-detail .today-card .today-degrees {
+    font-size: 2rem;
+  }
+}
+
 .climate-page .week-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -671,6 +685,16 @@ span {
       -ms-flex-align: none;
           align-items: none;
   background-color: gainsboro;
+}
+
+.climate-page .week-content .week-card {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.climate-page .week-content .week-card p {
+  color: #777777;
 }
 
 .climate-page .data-content {
