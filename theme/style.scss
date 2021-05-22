@@ -50,7 +50,7 @@ body {
     object-fit: cover;
   }
 
-  .hidden-mobile{
+  .hidden-mobile {
     @media (max-width: 600px) {
       visibility: hidden;
     }
@@ -338,11 +338,16 @@ span {
     .today-degrees {
       margin-right: 25px;
       font-size: 6rem;
+      @media (max-width: 800px) {
+        font-size: 5rem;
+      }
     }
     p {
       align-self: center;
       font-size: 0.7rem;
-      width: 20%;
+      min-width: 100px;
+      max-width: 20%;
+      color: #a5a49c;
     }
     .today-detail {
       @include flex(row, space-between);
@@ -350,6 +355,9 @@ span {
         .today-degrees {
           font-size: 4.5rem;
           color: #a5a49c;
+          @media (max-width: 800px) {
+            font-size: 2rem;
+          }
         }
       }
     }
@@ -358,6 +366,12 @@ span {
   .week-content {
     @include flex(row, space-around);
     background-color: gainsboro;
+    .week-card {
+      align-self: center;
+      p {
+        color: #777777;
+      }
+    }
   }
 
   .data-content {
