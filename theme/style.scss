@@ -85,10 +85,6 @@ footer {
 
   .footer-subscription h2 {
     text-align: center;
-
-    .footer-table {
-      @include flex(row, center, none, center);
-    }
   }
 }
 
@@ -409,5 +405,40 @@ span {
   }
   .form-check {
     margin: 15px 0 0 30px;
+  }
+}
+
+/* Contract*/
+.contract-page {
+  .contract-table {
+    @include flex(row, center, none, center);
+    table {
+      thead {
+        tr {
+          background-color: #5747BF;
+          color: white;
+          th {
+            padding: 10px;
+          }
+        }
+        button{
+          background-color: white;
+          color: #5747BF;
+          font-weight: 600;
+          box-shadow: unset;
+          box-sizing: unset;
+          border: unset;
+          padding: 5px;
+          border-radius: 2px;
+          cursor: pointer;
+        }
+      }
+      tbody{
+        td{
+          padding: 15px;
+          text-align: center;
+        }
+      }
+    }
   }
 }
