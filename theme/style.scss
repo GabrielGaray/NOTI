@@ -7,6 +7,7 @@
 $dark-black: #262626;
 $blue-black: #110e26;
 $gray-yellow: #6a6b50;
+$gray: #777777;
 $soft-gray: #d8d8d8;
 
 html {
@@ -57,6 +58,38 @@ body {
   }
 }
 
+.coming-soon{
+  font-size: 22px;
+  font-weight: 900;
+  color: green;
+  align-self: center;
+}
+
+.flicker {
+  animation-name: flicker;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flicker {  
+  0% { opacity: 1.0; }
+   50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@keyframes horizontal {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
 @mixin flex($direction, $justify: none, $align: none, $align-items: none) {
   display: flex;
   flex-direction: $direction;
@@ -67,10 +100,24 @@ body {
 
 footer {
   display: flex;
-
+  @include flex(row, space-between);
+  background-color: $blue-black;
+  margin: -10px;
+  padding: 10px;
+  color: white;
+  p,
+  h2 {
+    color: inherit;
+  }
   .footer-info {
-    @include flex(column, flex-end, none, flex-end);
-    width: 10%;
+    @include flex(column, space-between);
+    padding-right: 20px;
+    a {
+      color: $soft-gray;
+    }
+    .footer-author {
+      align-self: flex-end;
+    }
   }
 
   form {
@@ -85,28 +132,12 @@ footer {
 
   .footer-subscription h2 {
     text-align: center;
-
-    .footer-table {
-      @include flex(row, center, none, center);
-    }
   }
 }
 
 .grid {
   display: grid;
   grid-gap: 20px;
-}
-
-@keyframes horizontal {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-50%, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
 }
 
 span {
@@ -161,6 +192,11 @@ span {
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 10px;
+  }
+}
+@media (max-width: 600px) {
+  footer {
+    visibility: hidden;
   }
 }
 
@@ -409,5 +445,77 @@ span {
   }
   .form-check {
     margin: 15px 0 0 30px;
+  }
+}
+
+/* Contract*/
+.contract-page {
+  @include flex(column);
+  .contract-table {
+    @include flex(row, center, none, center);
+    table {
+      thead {
+        tr {
+          background-color: #5747bf;
+          color: white;
+          th {
+            padding: 10px;
+          }
+        }
+        button {
+          background-color: white;
+          color: #5747bf;
+          font-weight: 600;
+          box-shadow: unset;
+          box-sizing: unset;
+          border: unset;
+          padding: 5px;
+          border-radius: 2px;
+          cursor: pointer;
+        }
+      }
+      tbody {
+        td {
+          padding: 15px;
+          text-align: center;
+        }
+      }
+      tfoot {
+        tr {
+          background-color: $gray;
+          color: white;
+          td {
+            padding: 10px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .contract-info {
+    @include flex(row, center);
+    @media (max-width: 900px) {
+      @include flex(column, none, none, center);
+      margin-bottom: 20px;
+    }
+    height: 100%;
+    .img {
+      background-position: center;
+      background-size: cover;
+      min-height: 350px;
+      @media (max-width: 900px) {
+        width: 50%;
+      }
+      margin: 20px 0;
+      width: 25%;
+    }
+    p {
+      margin-left: 20px;
+      align-self: center;
+      max-width: 25%;
+      @media (max-width: 900px) {
+        max-width: 55%;
+      }
+    }
   }
 }

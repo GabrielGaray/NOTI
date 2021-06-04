@@ -58,72 +58,48 @@ body img {
   }
 }
 
-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.coming-soon {
+  font-size: 22px;
+  font-weight: 900;
+  color: green;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
-footer .footer-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -ms-flex-line-pack: none;
-      align-content: none;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  width: 10%;
+.flicker {
+  -webkit-animation-name: flicker;
+          animation-name: flicker;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
-footer form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 30%;
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
 }
 
-footer .footer-subscription {
-  width: 60%;
-}
-
-footer .footer-subscription h2 {
-  text-align: center;
-}
-
-footer .footer-subscription h2 .footer-table {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: none;
-      align-content: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.grid {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 20px;
+@keyframes flicker {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
 }
 
 @-webkit-keyframes horizontal {
@@ -154,6 +130,87 @@ footer .footer-subscription h2 .footer-table {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
   }
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  background-color: #110e26;
+  margin: -10px;
+  padding: 10px;
+  color: white;
+}
+
+footer p,
+footer h2 {
+  color: inherit;
+}
+
+footer .footer-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  padding-right: 20px;
+}
+
+footer .footer-info a {
+  color: #d8d8d8;
+}
+
+footer .footer-info .footer-author {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+footer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+}
+
+footer .footer-subscription {
+  width: 60%;
+}
+
+footer .footer-subscription h2 {
+  text-align: center;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
 }
 
 span {
@@ -250,6 +307,12 @@ span {
 @media (min-width: 375px) {
   .nav-content .logo {
     width: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    visibility: hidden;
   }
 }
 
@@ -760,5 +823,148 @@ span {
 
 .abm-news-content .form-check {
   margin: 15px 0 0 30px;
+}
+
+/* Contract*/
+.contract-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+}
+
+.contract-page .contract-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contract-page .contract-table table thead tr {
+  background-color: #5747bf;
+  color: white;
+}
+
+.contract-page .contract-table table thead tr th {
+  padding: 10px;
+}
+
+.contract-page .contract-table table thead button {
+  background-color: white;
+  color: #5747bf;
+  font-weight: 600;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+  -webkit-box-sizing: unset;
+          box-sizing: unset;
+  border: unset;
+  padding: 5px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.contract-page .contract-table table tbody td {
+  padding: 15px;
+  text-align: center;
+}
+
+.contract-page .contract-table table tfoot tr {
+  background-color: #777777;
+  color: white;
+}
+
+.contract-page .contract-table table tfoot tr td {
+  padding: 10px;
+  text-align: center;
+}
+
+.contract-page .contract-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .contract-page .contract-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
+    -ms-flex-line-pack: none;
+        align-content: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 20px;
+  }
+}
+
+.contract-page .contract-info .img {
+  background-position: center;
+  background-size: cover;
+  min-height: 350px;
+  margin: 20px 0;
+  width: 25%;
+}
+
+@media (max-width: 900px) {
+  .contract-page .contract-info .img {
+    width: 50%;
+  }
+}
+
+.contract-page .contract-info p {
+  margin-left: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  max-width: 25%;
+}
+
+@media (max-width: 900px) {
+  .contract-page .contract-info p {
+    max-width: 55%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
