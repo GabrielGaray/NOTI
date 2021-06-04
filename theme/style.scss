@@ -7,6 +7,7 @@
 $dark-black: #262626;
 $blue-black: #110e26;
 $gray-yellow: #6a6b50;
+$gray: #777777;
 $soft-gray: #d8d8d8;
 
 html {
@@ -410,20 +411,21 @@ span {
 
 /* Contract*/
 .contract-page {
+  @include flex(column);
   .contract-table {
     @include flex(row, center, none, center);
     table {
       thead {
         tr {
-          background-color: #5747BF;
+          background-color: #5747bf;
           color: white;
           th {
             padding: 10px;
           }
         }
-        button{
+        button {
           background-color: white;
-          color: #5747BF;
+          color: #5747bf;
           font-weight: 600;
           box-shadow: unset;
           box-sizing: unset;
@@ -433,11 +435,47 @@ span {
           cursor: pointer;
         }
       }
-      tbody{
-        td{
+      tbody {
+        td {
           padding: 15px;
           text-align: center;
         }
+      }
+      tfoot {
+        tr {
+          background-color: $gray;
+          color: white;
+          td {
+            padding: 10px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .contract-info {
+    @include flex(row, center);
+    @media (max-width: 900px) {
+      @include flex(column, none, none, center);
+      margin-bottom: 20px;
+    }
+    height: 100%;
+    .img {
+      background-position: center;
+      background-size: cover;
+      min-height: 350px;
+      @media (max-width: 900px) {
+        width: 50%;
+      }
+      margin: 20px 0;
+      width: 25%;
+    }
+    p {
+      margin-left: 20px;
+      align-self: center;
+      max-width: 25%;
+      @media (max-width: 900px) {
+        max-width: 55%;
       }
     }
   }

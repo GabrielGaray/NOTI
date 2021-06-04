@@ -745,6 +745,24 @@ span {
 }
 
 /* Contract*/
+.contract-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+}
+
 .contract-page .contract-table {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -764,7 +782,7 @@ span {
 }
 
 .contract-page .contract-table table thead tr {
-  background-color: #5747BF;
+  background-color: #5747bf;
   color: white;
 }
 
@@ -774,7 +792,7 @@ span {
 
 .contract-page .contract-table table thead button {
   background-color: white;
-  color: #5747BF;
+  color: #5747bf;
   font-weight: 600;
   -webkit-box-shadow: unset;
           box-shadow: unset;
@@ -789,5 +807,83 @@ span {
 .contract-page .contract-table table tbody td {
   padding: 15px;
   text-align: center;
+}
+
+.contract-page .contract-table table tfoot tr {
+  background-color: #777777;
+  color: white;
+}
+
+.contract-page .contract-table table tfoot tr td {
+  padding: 10px;
+  text-align: center;
+}
+
+.contract-page .contract-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: none;
+      align-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .contract-page .contract-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
+    -ms-flex-line-pack: none;
+        align-content: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 20px;
+  }
+}
+
+.contract-page .contract-info .img {
+  background-position: center;
+  background-size: cover;
+  min-height: 350px;
+  margin: 20px 0;
+  width: 25%;
+}
+
+@media (max-width: 900px) {
+  .contract-page .contract-info .img {
+    width: 50%;
+  }
+}
+
+.contract-page .contract-info p {
+  margin-left: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  max-width: 25%;
+}
+
+@media (max-width: 900px) {
+  .contract-page .contract-info p {
+    max-width: 55%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
