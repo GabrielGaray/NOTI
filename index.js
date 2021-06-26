@@ -41,4 +41,5 @@ class User {
   
   const user = new User(parseInt(prompt("Ingrese el año en que nació")));
   user.isOlder();
+  document.getElementById("news-title").innerHTML = `Ultimas noticias para personas de ${user.getAge()} años`;  
   
