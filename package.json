@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/GabrielGaray/NOTI/issues"
   },
-  "homepage": "https://github.com/GabrielGaray/NOTI#readme"
+  "homepage": "https://github.com/GabrielGaray/NOTI#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
 }
