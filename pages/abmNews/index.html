@@ -55,104 +55,39 @@
             </li>
         </nav>
     </div>
-    <form class="" action="" method="post">
-        <button type="button" name="" id="boton-ajax" class="ui small blue button">mostrar contenido</button>
-    </form>
-    <br>
-    <p id="texto-ajax"></p>
+    <div id="formulario">
+        <form method="post" id="formdata">
+            <div>
+                <label for="title">Titulo: </label><input type="text" name="title" id="title" required="required">
+            </div>
+            <div>
+                <label for="subtitles">Subtitulo: </label><input type="text" name="subtitles" id="subtitles"
+                    required="required">
+            </div>
+            <div>
+                <label for="body">Cuerpo: </label>
+                <textarea name="body" id="body" required="required"></textarea>
+            </div>
+            <div>
+                <label for="select">Tipo de noticia </label>
+                <select name="select" id="select">
+                    <option value="value1">Deportes</option>
+                    <option value="value2" selected>Interes General</option>
+                    <option value="value3">Ciencia</option>
+                    <option value="value3">Politica</option>
+                    <option value="value3">Policial</option>
+                </select>
+            </div>
+            <div id="image-container">
+                <label for="check-file">Contiene imagenes </label><input type="checkbox" name="check-file"
+                    id="check-file" required="required">
+            </div>
+            <div>
+                <input type="button" id="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
-<footer>
-    <form>
-        <h2>
-            Contactanos
-        </h2>
-        <label for="name">Tu nombre:</label>
-        <input name="name" id="name"></input>
-        <label for="email">Tu email:</label>
-        <input name="email" id="email"></input>
-        <label for="affair">Asunto:</label>
-        <input name="affair" id="affair"></input>
-        <label for="msg">Mensaje:</label>
-        <textarea name="msg" id="msg"></textarea>
-        <label for="browser">Genero</label>
-        <input list="browsers" name="browser" id="browser" /></label>
-        <datalist id="browsers">
-            <option value="Hombre">
-            <option value="Mujer">
-            <option value="Otro">
-            <option value="Mejor no especificar">
-        </datalist>
-        <div class="checkbox">
-            <input name="promotions" id="promotions" type="checkbox" />
-            <label for="promotions">Recibir Promociones:</label>
-        </div>
-        <input type="reset">
-        <input type="submit">
-    </form>
-    <div class="footer-subscription">
-        <h2>
-            Contratanos
-        </h2>
-        <div class="footer-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Basico
-                            <button>
-                                Contratar
-                            </button>
-                        </th>
-                        <th>Estandar
-                            <button>
-                                Contratar
-                            </button>
-                        </th>
-                        <th>Premium
-                            <button>
-                                Contratar
-                            </button>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Contenido exclusivo</td>
-                        <td>Contenido exclusivo</td>
-                        <td>Contenido exclusivo</td>
-                    </tr>
-                    <tr>
-                        <td>Acceso ilimitado a Los Andes</td>
-                        <td>Acceso ilimitado a Los Andes</td>
-                        <td>Acceso ilimitado a Los Andes</td>
-                    </tr>
-                    <tr>
-                        <td>Newsletter desde la redacción</td>
-                        <td>Newsletter desde la redacción</td>
-                        <td>Newsletter desde la redacción</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Tarjeta Los Andes Pass</td>
-                        <td>Tarjeta Los Andes Pass</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Edición impresa en formato PDF</td>
-                        <td>Edición impresa en formato PDF</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>Ejemplar de domingo en tu domicilio</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="footer-info">
-        <p>Author: Gabriel Garay</p>
-        <p><a href="mailto:hege@example.com">hege@example.com</a></p>
-    </div>
-</footer>
 
 </html>
