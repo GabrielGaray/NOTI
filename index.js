@@ -44,7 +44,6 @@ class News {
     this.title = title;
     this.subtitle = subtitle;
     this.resume = resume;
-
   }
 
   setSubtitle(age) {
@@ -62,21 +61,33 @@ class News {
   getResume() {
     return this.resume;
   }
-
 }
 
 const setHTMLHome = (user, news) => {
-  document.getElementById("news-title").innerHTML = `Ultimas noticias para personas de ${user.getAge()} años`;
+  document.getElementById(
+    "news-title"
+  ).innerHTML = `Ultimas noticias para personas de ${user.getAge()} años`;
   document.getElementById("news-h3").innerHTML = `${news.subtitle}`;
+};
+
+const localUser = JSON.parse(localStorage.getItem("user"));
+let year;
+if (!localUser) {
+  year = parseInt(prompt("Ingrese el año en que nació"));
 }
 
-const localUser = JSON.parse(localStorage.getItem('user'));
+if (!year && !localUser) {
+  window.location.assign("https://www.google.com");
+}
 
-const user = new User(localUser?.yearOfBirth || parseInt(prompt("Ingrese el año en que nació")));
+const user = new User(localUser?.yearOfBirth || year);
 user.isOlder();
 
-const news = new News("Cómo Roblox, la plataforma de videojuegos, ha creado su propia escena musical", "Odin, un músico de 15 años conocido como lungskull, en su casa de París.")
+const news = new News(
+  "Cómo Roblox, la plataforma de videojuegos, ha creado su propia escena musical",
+  "Odin, un músico de 15 años conocido como lungskull, en su casa de París."
+);
 
-setHTMLHome(user, news)
+setHTMLHome(user, news);
 
-localStorage.setItem('user', JSON.stringify(user));
+localStorage.setItem("user", JSON.stringify(user));

@@ -58,7 +58,7 @@ body {
   }
 }
 
-.coming-soon{
+.coming-soon {
   font-size: 22px;
   font-weight: 900;
   color: green;
@@ -72,10 +72,16 @@ body {
   animation-iteration-count: infinite;
 }
 
-@keyframes flicker {  
-  0% { opacity: 1.0; }
-   50% { opacity: 0.0; }
-  100% { opacity: 1.0; }
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes horizontal {
@@ -148,6 +154,11 @@ span {
   bottom: 0;
   margin: 0 30px 10px 0;
   cursor: pointer;
+}
+
+.required::after {
+  content: "*";
+  margin-left: 0.25rem;
 }
 
 /* Home */
@@ -437,14 +448,33 @@ span {
   }
 }
 
-/* abm-news*/
-.abm-news-content {
-  margin-bottom: 100px+ 200px;
-  textarea {
-    height: 300px;
+/* abm-news-page*/
+.abm-news-page {
+  @include flex(row, center, none, center);
+  form {
+    width: 50%;
+  }
+  .form-group {
+    @include flex(column);
+    padding: 10px;
   }
   .form-check {
-    margin: 15px 0 0 30px;
+    @include flex(row, flex-start, none, center);
+    padding: 10px;
+    >label{
+      padding-right: 10px;
+    }
+  }
+  input,
+  textarea,
+  select {
+    background: white;
+    border: 1px solid $soft-gray;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  textarea {
+    height: 200px;
   }
 }
 
