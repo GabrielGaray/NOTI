@@ -2,7 +2,12 @@ const validaForm = () => {
   // Inputs
   if ($("#title").val() == "") {
     alert("El campo titulo no puede estar vacío.");
-    $("#title").focus();   
+    $("#title").focus();
+    return false;
+  }
+  if ($("#select-type").val() == "") {
+    alert("Seleccione un tipo de noticia");
+    $("#subtitles").focus();
     return false;
   }
   if ($("#subtitles").val() == "") {
@@ -16,22 +21,24 @@ const validaForm = () => {
     return false;
   }
   return true;
-}
+};
 
 $(document).ready(() => {
+  $("#check").click(() => {
+    if ($("#select").length > 0) return $("#select").remove();
 
-  $("#check-file").click(() => {
-    if ($("#file").length > 0) return $( "#file" ).remove();
-
-    if ($("#check-file").is(":checked")) {
-      return $('#image-container').append('<input type="file" name="file"  id="file" />');
+    if ($("#check").is(":checked")) {
+      return $("#select-page-container").append(
+        '<div class="form-group" id="select"><label for="select">Posicion</label><select name="select"><option value="value1">Principal</option><option value="value2" selected>Secundario</option><option value="value3">Barra de Noticias</option></select></div>'
+      );
     }
   });
 
-  $("#submit").click(() => {     
-    if (validaForm()) {  
+  $("#submit").click(() => {
+    if (validaForm()) {
       //send form
+      alert("Se ha creado con exito la noticia!!!");
+      window.location.assign("../../index.html");
     }
   });
 });
-
