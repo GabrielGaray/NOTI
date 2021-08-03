@@ -8,6 +8,10 @@ class User {
     this.age = age;
   }
 
+  getAge() {
+    return this.age;
+  }
+  
   setYearOfBirth(yearOfBirth) {
     this.yearOfBirth = yearOfBirth;
   }
@@ -16,9 +20,6 @@ class User {
     return this.yearOfBirth;
   }
 
-  getAge() {
-    return this.age;
-  }
 
   isOlder() {
     const date = new Date();
@@ -46,7 +47,7 @@ class News {
     this.resume = resume;
   }
 
-  setSubtitle(age) {
+  setSubtitle(subtitle) {
     this.subtitle = subtitle;
   }
 
@@ -54,7 +55,7 @@ class News {
     return this.subtitle;
   }
 
-  setResume(age) {
+  setResume(resume) {
     this.resume = resume;
   }
 
