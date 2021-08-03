@@ -24,6 +24,12 @@ const validaForm = () => {
 };
 
 $(document).ready(() => {
+  $.getJSON("../../mockups/parameters.json", (data) =>
+    $.map(data?.typeOfNews, (type, i) => {
+      $("#select-type").append(`<option value=${i}>${type}</option>`);
+    })
+  );
+
   $("#check").click(() => {
     if ($("#select").length > 0) return $("#select").remove();
 
