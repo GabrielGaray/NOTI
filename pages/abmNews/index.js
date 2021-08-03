@@ -42,9 +42,17 @@ $(document).ready(() => {
 
   $("#submit").click(() => {
     if (validaForm()) {
-      //send form
-      alert("Se ha creado con exito la noticia!!!");
-      window.location.assign("../../index.html");
+      $.post(
+        "https://jsonplaceholder.typicode.com/posts",
+        $("#formdata").serialize(),
+        function (res) {
+          $("#formulario").fadeOut("slow");
+            alert("La noticia se ha creado con exito");
+            window.location.assign("../../index.html");
+        }
+      ).fail(() => {
+        alert("Ha habido un error, por favor intente mas tarde.");
+      });
     }
   });
 });
